@@ -20,7 +20,7 @@ jobs:
           id: build-docker-image
           run: |
             ls -la 
-            docker build . -f Dockerfile -t billyae/bootcamp_week4:lastest
+            docker build . -f Dockerfile -t billyae/bootcamp_week4:v1.0.0
         - name: push the docker image
           id: push-docker-image
-          run: docker push ${{secrets.DOCKERHUB_USERNAME}}/bootcamp_week4:latest
+          run: docker push ${{secrets.DOCKERHUB_USERNAME}}/bootcamp_week4:v1.0.0
