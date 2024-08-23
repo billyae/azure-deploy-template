@@ -1,22 +1,8 @@
-# You need the AZURE_WEB_APP_NAME and to download the deployment profile and
-# add it as a secret to this repo with the name AZURE_WEBAPP_PUBLISH_PROFILE
-name: Trigger auto deployment for demo-container
-
-env:
-  # !!!! UPDATE THESE VARIABLE BELOW !!!!
-  DOCKERHUB_USERNAME: billyae
-  DOCKERHUB_PASSWORD: Yzh5480745
-
-# When this action will be executed
+name: Build Docker Image
 on:
-  # Automatically trigger it when detected changes in repo. Remove comments to enable
-  #push:
-  #  branches:
-  #    [ main ]
-
-  # Allow mannually trigger
-  workflow_dispatch:
-
+  push:
+    branches:
+      - main
 jobs:
     build:
       name: push docker image to docker hub
